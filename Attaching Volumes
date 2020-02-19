@@ -38,3 +38,16 @@ Attaching a Volume to an Instance:
 # verify for error after ssh it again
   -> sudo mount -a
   
+-----------------------------------------------------------------------------------------------------
+
+Resizing the Volume:
+
+# use lsblk to check the disk size
+  -> lsblk
+
+# see how the system sees our drive
+  -> df -h
+
+# resize the partition
+  -> sudo resize /dev/xvdf
+
