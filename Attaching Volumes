@@ -49,5 +49,5 @@ Resizing the Volume:
   -> df -h
 
 # resize the partition
-  -> sudo resize /dev/xvdf
+  -> sudo resize2fs /dev/xvdf
 
