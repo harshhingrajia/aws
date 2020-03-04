@@ -1,0 +1,28 @@
+1st Method:
+-----------
+
+1. Create an same instance in same region name it "Helper Instance"
+2. Stop both the instance
+3. Attach the Recovery instance volume to helper instance
+4. Start the Helper instance and SSH it
+5. Run the following commands:
+  i. lsblk
+  ii. df -h
+  iii. sudo mkdir -p /var/recovery_disk
+  iv. sudo mount -o nouuid /dev/xvdf1 /var/recovery_disk
+  v. df -h
+  vi. cat /home/centos/.ssh/authorized_keys >> /var/recovery_disk/home/centos/.ssh/authorized_keys
+               USER_NAME                                              USER_NAME
+  vii. sudo umount /var/recovery_disk
+  
+6. Stop the Helper Instance
+7. Detach the Recovery instance volume and attach it to recovery instance. Give the path as root "/dev/sda1"
+8. Start both the instance and ssh it. Use Helper instance pem key to ssh it to recovery instance.
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+2ND Method:
+-----------
+
+1. Create an AMI image of the recovery instance and launch an new instance with AMI image and use new pem key.
