@@ -16,11 +16,11 @@
   `sudo mount /dev/xvdf /myexternalvolume`
 
 #### 6. Go to directory and verify size and free space
-    ```sh
-    cd /myexternalvolume
-    echo "hello" > hello.txt
-    df -h 
-    ```      
+    
+    - cd /myexternalvolume
+    - echo "hello" > hello.txt
+    - df -h 
+         
 
 #### 7. To unmount
   `unmount /dev/xvdf`
